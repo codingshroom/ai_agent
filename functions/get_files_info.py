@@ -7,7 +7,7 @@ def get_files_info(working_directory, directory=None):
     try:
         work_dir = os.path.abspath(working_directory)
         dirr = os.path.join(work_dir, directory)
-        dirr = os.path.abspath(dirr)
+        dirr = os.path.abspath(dirr)  # without it it may look like: Users/projects/ai_agent/.. which would lead to logic errors later
         list_dirr = os.listdir(dirr)
     except:
         return "Error: os.path or os.listdir method failed"
